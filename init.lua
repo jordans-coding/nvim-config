@@ -28,6 +28,12 @@ require("lazy").setup({
 	{ "lukas-reineke/indent-blankline.nvim" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		opts = {} -- this is equalent to setup({}) function
+	},
+	{ 'nvim-lualine/lualine.nvim' },
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function () 
@@ -99,6 +105,9 @@ vim.opt.list = true
 require("indent_blankline").setup {
 	show_end_of_line = true,
 }
+
+
+require('lualine').setup()
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
